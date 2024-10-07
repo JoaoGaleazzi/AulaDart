@@ -13,7 +13,7 @@ void main() {
   print(isEven(1));
   print(canIVote(70));
   print(getParcela(2850.0));
-  brinde("     FeMiNiNo  ", 20);
+  brinde(Pessoa("fEmInInO", 5));
   getMilhasInfo(120);
 }
 
@@ -50,12 +50,28 @@ String canIVote(int age){
 }
 
 double getParcela(double salary){
-  var parcelaSemJuro = salary * (3/10);
-  return parcelaSemJuro * (112/100);
+  var parcelaSemJuro = salary * 0.3;
+  return parcelaSemJuro * 1.12;
 }
 
-void brinde(String sexo, int idade){
-  idade >= 18 || sexo.toLowerCase().trim() == "feminino" ? 
+void brinde(Pessoa pessoa){
+  pessoa.idade >= 18 || pessoa.sexo.toLowerCase().trim() == "feminino" ? 
   print("Brinde"):
   print("Sem brinde");
+}
+
+void getMilhasInfo(int milhas){
+  print("Milhas = $milhas");
+  var pontos = (milhas/12).floor();
+  print("Pontos = $pontos");
+  print(pontos >= 10 ? "Contemplado" : "Não contemplado");
+}
+
+class Pessoa{
+  Pessoa(String sexo, int idade){
+    this.sexo = sexo;
+    this.idade = idade;
+  }
+  String sexo = "";
+  int idade = 0;
 }
