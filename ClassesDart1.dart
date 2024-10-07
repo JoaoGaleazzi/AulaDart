@@ -7,6 +7,11 @@ void main(){
   print(jooj.nome);
   jooj.idade = 1;
   print(jooj.idade);
+  
+  Conta conta = Conta();
+  conta.saque = 450;
+  print("O valor do saque foi de: ${conta.saque}");
+  print("Saldo = ${conta.saldo}");
 }
 
 class Retangulo {
@@ -42,5 +47,21 @@ class Pessoa {
     else{
       print("Idade deve ser maior que zero");
     }
+  }
+}
+
+class Conta {
+  double saldo = 1000;
+  double _saque = 0;
+  double get saque{
+    if(_saque < saldo && _saque > 0){
+      saldo = saldo - _saque;
+      return _saque;
+    }
+    print("Saque deve ser um número acima de zero e abaixo do saldo total");
+    return 0;
+  }
+  set saque(double saque){
+    this._saque = saque;
   }
 }
