@@ -29,6 +29,25 @@ void main() {
   
   usuarios.printStack();
   
+  
+  
+  for(int i = 0; i < 5; i++){
+    print("");
+  }
+  
+  print("teste");
+  var x1 = [1,2,3];
+  var x2 = [2, ...?null,3,4];
+  print(x1 + x2);
+  
+  Map m = Map();
+  m["Teste"] = "AAAAAAAAAAAAAAAAA";
+  m["Teste1"] = "AAAbbbbbbbbbbAAAAAAAAAAAAAA";
+  m["Teste2"] = "AAAAAAAAAAAAvvvvvvvvAAAAA";
+  print(m);
+  print(m.keys);
+  print(m.values);
+  
 }
 
 class Stack<T>{
